@@ -668,11 +668,11 @@ We provide keyboards in their native to each operating system packages.
 * **Available Installers Qazaq Basic:**
 
 	* **Linux**
-		* [deb](https://github.com/VivaRado/qazaq.org/lib/installers/lnx/Qazaq-Basic-Linux.deb)
+		* [deb](https://github.com/orgqazaq/keyboards/blob/master/lib/installers/lnx/Qazaq-Basic-Linux.deb)
 	* **MacOS**
-		* [dmg](https://github.com/VivaRado/qazaq.org/lib/installers/mac/Qazaq-Basic-MacOS.dmg)
+		* [dmg](https://github.com/orgqazaq/keyboards/blob/master/lib/installers/mac/Qazaq-Basic-MacOS.dmg)
 	* **Windows**
-		* [exe](https://github.com/VivaRado/qazaq.org/lib/installers/win/Qazaq-Basic-Windows.exe)
+		* [exe](https://github.com/orgqazaq/keyboards/blob/master/lib/installers/win/Qazaq-Basic-Windows.exe)
 
 ---
 
@@ -839,12 +839,6 @@ To be iterated.
 			*  VRD PRAGMA Modules
 		*  Client Side
 			*  Font End Navigation (Like in VivaRado Homepage)
-	*  Website Content
-		*  Advent Font Update
-			*  Cyrillic Language
-			*  Kazakh Language
-			*  Qazaq Language Substitutions (sub)
-			*  VRD TYPL Kerning Script Reintegration
 
 ---
 
