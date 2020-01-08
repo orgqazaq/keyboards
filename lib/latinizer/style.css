@@ -1,0 +1,21 @@
+.latinizer-content {
+	width:100%;
+}
+.glyph {
+	display: inline;
+	float: left;
+}
+
+.glyph .orig {
+	display: none;
+}
+.glyph .latn {
+	
+}
+
+/*.glyph:hover .orig {
+	display: block;
+}
+.glyph:hover .latn {
+	display: none;
+}*/

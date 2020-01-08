@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="./jquery.min.js"></script>
+</head>
+<body>
+	<style type="text/css">
+		.scaled{
+			transform: scale(1.2);
+			position: absolute;
+			background: #333;
+			width: 500px;
+			height: 500px;
+			left: 0px;
+			right: 0px;
+			margin:0 auto;
+			top: 20%;
+			transform-origin: center center;
+		}
+		.target {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			background: #fff;
+			left: 100px;
+			top: 100px;
+		}
+		canvas {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			z-index: 1;
+			pointer-events: none;
+		}
+	</style>
+	<div class="scaled">
+		<canvas id="myCanvas"></canvas>
+		<div class="target"></div>
+	</div>
+	<script type="text/javascript">
+
+		function do_canvas(){
+			var canvas = document.getElementById('myCanvas');
+			
+			canvas.width  = $(".scaled").width();
+			canvas.height = $(".scaled").height();
+
+			var context = canvas.getContext('2d');
+			_t = $(".target");
+			_t_p = $(".target").parent();
+
+			_t_l = _t[0].getBoundingClientRect().left - _t_p[0].getBoundingClientRect().left;
+			_t_t = _t[0].getBoundingClientRect().top - _t_p[0].getBoundingClientRect().top;
+
+			//_t_l = $(".target").position().left;
+			//_t_t = $(".target").position().top;
+			_t_w = $(".target").width();
+			_t_h = $(".target").height();
+
+
+			var centerX = _t_l + _t_w /2;//canvas.width / 2;
+			var centerY = _t_t + _t_h / 2;//canvas.height / 2;
+			var radius = 10;
+
+
+			context.beginPath();
+			context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+			context.fillStyle = 'green';
+			context.fill();
+			context.lineWidth = 5;
+			context.strokeStyle = '#003300';
+			context.stroke();
+			
+		}
+
+		$(function(){
+			//
+			$(".scaled").on("click",function(e){
+				//
+				do_canvas()
+				//
+			})
+				do_canvas()
+			//
+		})
+	</script>
+</body>
+</html>

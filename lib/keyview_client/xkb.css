@@ -1,0 +1,480 @@
+body {font-family: 'Arial', 'Symbol', sans-serif; font-size: 13px; margin: 32px 16px}
+h1 {margin: 30px 10px 16px; font-size: 22px}
+h2 {margin: 30px 10px 16px; font-size: 18px}
+p {margin: 10px}
+.keys {overflow: auto; clear: both;}
+.keyboard {float: left; border: 1px solid black; overflow: hidden; background-color: black; width: 690px; margin: 10px; margin-right: 20px; box-shadow: 8px 8px 5px #888; position: relative}
+.keydetails {float: left; margin-top: 10px; margin-left: 10px; border: 2px solid black; width: 228px; height: 228px; box-shadow: 8px 8px 5px #888}
+.keydetails table {empty-cells: hide}
+.keydetails td {border: 1px solid black; vertical-align: top; width: 105px}
+.keydetails .char {font-size: 26px; font-family: 'Times New Roman', 'Symbol', serif; float: left; margin: 4px 6px 0px 6px}
+.keydetails .code {margin: 4px 10px 2px 5px; float: right}
+.keydetails .name {
+	clear: both;
+	margin: 0 2px;
+	font-size: 11px;
+	height: 40px;
+	word-wrap: anywhere;
+	line-height: 0.9;
+}
+.keydetails .symbolname {margin: 0; font-size: 11px; word-wrap: anywhere;}
+
+p, .row {clear: both}
+div.key {float: left; background-color: white; border: 1px solid black; height: 44px; width: 44px; font-weight: bold; font-size: 13px}
+div.special {background-color: lightgray; font-size: 11px}
+div.alnum {cursor: pointer; position: relative}
+div.merged-top {height: 46px; position: relative; top: 1px; border-bottom: none; border-top: none}
+div.merged-bottom {float: right}
+div.merged-beneath {border-top: 2px solid black; border-right: 2px solid black; height: 44px; position: absolute; top: 91px; left: 592px}
+
+div.merged-beneath + div.merged-bottom {border-left: none}
+.key-table {width: 100%; height: 100%}
+td.group1, td.group2 {text-align: center; width: 50%; height: 50%; padding: 2px}
+.keyboard td.group1, .keyboard td.group2 {line-height: 0.9}
+div.special td.group1 {text-align: left}
+div.hovered {border-color: gray; color: gray}
+div.selected {background-color: gray; color: white}
+
+kbd.command {background-color: #DDD; padding: 0 2px}
+kbd.key {word-spacing: -3px}
+kbd.key, kbd.key kbd {font-family: sans-serif; font-size: 9pt}
+kbd.key kbd {border: 1px outset black; background-color: white; opacity: .7; padding: 0 2px; word-spacing: normal}
+
+
+.diff .rem, .diff-legend .rem {background-color: #E88994}
+.diff .con, .diff-legend .con {background-color: #E88994}
+.diff .mov, .diff-legend .mov {background-color: #EDF594}
+.diff .new, .diff-legend .new {background-color: #93E889}
+.diff .selected .rem, .diff .selected .mov, .diff .selected .new {color: gray}
+
+.control_interface {position: relative; margin-bottom: 1rem; float: left;}
+.control_interface div { background-color: white; overflow: auto; width: 180px; position: relative; float: left;}
+.control_interface div label {float: left; width: 180px; cursor: pointer}
+.control_interface div label span {text-align: center; padding: 3px 0px; display: block}
+.control_interface div label input {position: absolute; top: -20px}
+.control_interface div input.selected + span {background-color: gray; color: white}
+.control_interface > div{}
+
+.diff-select.pl_proposal {top: -10px}
+.diff-select.pl {top: 11px}
+.geometry-select {width: 540px}
+.diff-legend {display: none; width: 100px; }
+.diff-legend > div {display: none; overflow: hidden; width: 90px; margin: 0; border: none}
+.diff-legend > div > div {overflow: hidden; width: 80px; padding: 3px 4px 3px 8px; margin: 0; border: none}
+.diff-legend > div > div > div {width: 10px; height: 10px; float: left; margin: 1px 5px 0 0}
+#explanations {clear: left; margin: 10px; width: 954px}
+#explanations th, #explanations td {padding: 2px; border: 1px solid #557}
+#explanations td:first-child {text-align: center; color: #444; background-color: #DDD; white-space: nowrap}
+#explanations td:first-child strong {color: black}
+#explanations td:first-child + td {text-align: center; background-color: #DCD}
+#explanations td:first-child + td + td {background-color: #DCD}
+#explanations td:first-child + td + td + td {text-align: center; background-color: #CDD}
+#explanations td:first-child + td + td + td + td {background-color: #CDD}
+#explanations th:first-child {background-color: #CCC}
+#explanations th:first-child + th {background-color: #CBC}
+#explanations th:first-child + th + th {background-color: #BCC}
+.letter {text-decoration: underline}
+
+.symbols-select {
+	float: left;
+}
+
+
+/* Themes */
+body {
+	background: #f2f2f2;
+}
+#keys {
+	margin-top: 2rem;
+}
+.qazaq_org .keyboard,
+.qazaq_org .keydetails,
+.qazaq_org .keydetails .char{	
+	font-family: monospace;
+}
+.qazaq_org .keyboard {
+	/*width: 700px;*/
+	background: #d2d2d2;
+	border: none;
+	box-shadow: none;
+	border-radius: 0.25em;
+	padding:1px;
+	margin: 0 !important;
+}
+
+.qazaq_org .keyboard div.key {
+	border-radius: 0.3em;
+}
+
+.qazaq_org .keyboard div.selected {
+	background-color: #f6f6f6;
+	color: #000;
+}
+.qazaq_org .keyboard div.hovered {
+	color: #000;
+}
+
+/*.qazaq_org .keyboard div.hovered .level1 .group1,
+.qazaq_org .keyboard div.hovered .level1 .group2,
+.qazaq_org .keyboard div.hovered .level2 .group1,
+.qazaq_org .keyboard div.hovered .level2 .group2{
+	position: relative;
+}
+
+.qazaq_org .keyboard div.hovered .level1 .group1{
+	left: -1px;
+	bottom: -1px;
+}
+.qazaq_org .keyboard div.hovered .level1 .group2{
+	right: -1px;
+	bottom: -1px;
+}
+.qazaq_org .keyboard div.hovered .level2 .group1{
+	left: -1px;
+	top: -1px;
+}
+.qazaq_org .keyboard div.hovered .level2 .group2{
+	right: -1px;
+	top: -1px;
+}
+*/
+
+.keyview_keyboard {
+	position: relative;
+	float: left;
+	display: block;
+}
+
+.qazaq_org .keyboard div.key {
+
+	border-color: #d2d2d2 !important;
+}
+
+.qazaq_org .keyboard[data-ansi="qwerty2"] .merged-bottom[data-keycode="RTRN"]{
+
+	border-radius: 0 0 0.3em 0.3em !important;
+	
+}
+.qazaq_org .keyboard[data-ansi="qwerty2"] .merged-bottom[data-keycode="RTRN"]:after{
+	position: relative;
+	background: #e3e3e3;
+	content: '';
+	width: 55px;
+	height: 20px;
+	top: -47px;
+	display: block;
+	left: -5px;
+	z-index: 0;
+}
+.qazaq_org .keyboard div.merged-beneath {
+	top: 92px;
+	left: 593px;
+}
+
+.qazaq_org .keyboard .special {
+    background: #e3e3e3;
+    color: #bcbcbc;
+}
+.qazaq_org .keyboard[data-ansi="qwerty2"] .merged-beneath[data-keycode="BKSL"]{
+	z-index: 1;
+}
+.qazaq_org .keyboard[data-ansi="qwerty2"] div.merged-top {
+	border-radius: 0.3em 0.3em 0 0.3em !important;
+	height: 44px;
+}
+
+.qazaq_org .keyboard[data-ansi="qwerty3"] .merged-top[data-keycode="RTRN"]{
+	border-radius: 0.3em 0.3em 0 0 !important;
+}
+.qazaq_org .keyboard[data-ansi="qwerty3"] .merged-bottom[data-keycode="RTRN"]{
+	border-radius: 0.3em 0 0.3em 0.3em !important;
+}
+.qazaq_org .keyboard[data-ansi="qwerty3"] .merged-bottom[data-keycode="RTRN"]:after{
+	position: relative;
+	background: #d2d2d2;
+	content: '';
+	width: 20px;
+	height: 20px;
+	top: -64px;
+	display: block;
+	left: 12px;
+	z-index: 0;
+	border: 2px solid;
+	border-radius: 0 0 0.7em 0;
+	border-top: 0px;
+	border-left: 0px;
+	border-color: #e1e1e1;
+}
+.qazaq_org .keyboard[data-ansi="qwerty3"] [data-keycode="AD12"]{
+	z-index: 1;
+}
+
+.qazaq_org .keyboard .key.special .group1{
+	text-indent: 5px;
+	cursor: default;
+}
+/**/
+.qazaq_org .keyboard .key table{
+
+	border-collapse: separate;
+}
+.qazaq_org .keyboard .key td{
+	border-collapse: separate;
+	border: 2px solid #fff;
+}
+.qazaq_org .keyboard .key.special td{
+	border-color: transparent;
+}
+.qazaq_org .keyboard.diff td.rem,
+.qazaq_org .keyboard.diff td.mov,
+.qazaq_org .keyboard.diff td.new{
+
+	border-collapse: separate;
+	border: 2px solid #fff;
+}
+.qazaq_org .keyboard.diff .selected td.rem,
+.qazaq_org .keyboard.diff .selected td.mov,
+.qazaq_org .keyboard.diff .selected td.new{
+
+	border: 2px solid #f6f6f6;
+}
+
+
+.qazaq_org .keyboard .level1 .group1{
+	border-radius: 0 0 0 0.20em;
+	border-top: none !important;
+	border-right: none !important;
+}
+.qazaq_org .keyboard .level1 .group2{
+	border-radius: 0 0 0.20em 0;
+	border-top: none !important;
+	border-left: none !important;
+}
+.qazaq_org .keyboard .level2 .group1{
+	border-radius: 0.20em 0 0 0;
+	border-bottom: none !important;
+	border-right: none !important;
+}
+.qazaq_org .keyboard .level2 .group2{
+	border-radius: 0 0.20em 0 0;
+	border-bottom: none !important;
+	border-left: none !important;
+}
+/**/
+.qazaq_org .keydetails{
+	background: #fff;
+	border-radius: 0.3em;
+	box-shadow: none;
+	border: 2px solid #d2d2d2;
+
+	margin: 0 0 0 1rem;
+}
+.qazaq_org .keydetails td {
+	border-width: 2px;
+	border-color: #d2d2d2 !important;
+	
+}
+.qazaq_org .keydetails .level1 .group1 {
+	border-left: none;
+	border-bottom: none;
+}
+.qazaq_org .keydetails .level1 .group2 {
+	border-right: none;
+	border-bottom: none;
+}
+.qazaq_org .keydetails .level2 .group1 {
+	border-left: none;
+	border-top: none;
+}
+.qazaq_org .keydetails .level2 .group2 {
+	border-right: none;
+	border-top: none;
+}
+/**/
+.qazaq_org .diff .level2 td,
+.qazaq_org .diff .level1 td,
+.qazaq_org .level2 td,
+.qazaq_org .level1 td{
+	-webkit-transition: background-color 0.2s, border-color 0.2s; /* Safari */
+	transition: background-color 0.2s, border-color 0.2s;
+}
+/**/
+.qazaq_org .diff .rem{
+	color: #5c0000;
+}
+.qazaq_org .diff .mov{
+	color: #7b6d00;
+}
+.qazaq_org .diff .new{
+	color: #007202;
+}
+
+.ind_kb {
+	position: relative;
+	display: block;
+	float: left;
+	padding: 1px;
+	margin-bottom:4px;
+	background: #d2d2d2;
+	border-radius: 0.25em;
+}
+
+.ind_kb:last-of-type{
+	margin-bottom: 0px;
+}
+.ind_kb:last-of-type div.alnum{
+	cursor: default;
+}
+.keyboard.keyboard_ind {
+	padding: 1px !important;
+	box-sizing: border-box;
+	width: 694px;
+	background: none;
+}
+
+
+.ind_kb canvas,
+.kb_canvas {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.qazaq_org .keyboard div.key.selected_merger::after,
+.qazaq_org .keyboard div.key.contains::after {
+	position: absolute;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 3px solid #191970;
+	top: -3px;
+	left: -3px;
+	z-index: 2;
+	border-radius: 0.25rem;
+}
+
+/*.qazaq_org .keyboard.keyboard_ind div.merged-beneath {
+
+    top: 91px;
+    left: 592px;
+
+}*/
+
+
+.keys {
+	position: relative;
+}
+
+.keyboard_heatmap,
+.keyboard_third_heatmap .keys {
+	position: relative;
+	width: auto;
+	display: inline-block;
+}
+
+/* SMALL KEYBOARD */
+
+.keyboard_small .keyboard.keyboard_ind {
+	width: 485px;
+}
+.keyboard_small .keyboard.keyboard_ind .key{
+	height: 30px;
+	width: 30px;
+	font-size: 10px;
+}
+.keyboard_small .qazaq_org .keyboard .key.special .group1 {
+    text-indent: 1px;
+    cursor: default;
+}
+
+.keyboard_small .keyboard[data-ansi="qwerty3"] .merged-bottom[data-keycode="RTRN"]::after {
+
+    top: -50px;
+    left: 3px;
+}
+.keyboard_small div.merged-top {
+	height: 32px !important;
+	position: relative;
+	top: 1px;
+}
+
+.keyboard_small .keyboard div.merged-beneath {
+    top: 64px;
+    left: 412px;
+}
+
+.keyboard_small .keyboard[data-ansi="qwerty2"] .merged-bottom[data-keycode="RTRN"]::after {
+    width: 36px;
+    height: 7px;
+    top: -34px;
+    display: block;
+    left: 0px;
+}
+
+/* MEDIUM KEYBOARD */
+
+.keyboard_med .keyboard.keyboard_ind {
+	width: 560px;
+}
+.keyboard_med .keyboard.keyboard_ind .key{
+	height: 35px;
+	width: 35px;
+	font-size: 12px;
+}
+.keyboard_med .qazaq_org .keyboard .key.special .group1 {
+    text-indent: 1px;
+    cursor: default;
+}
+
+.keyboard_med .keyboard[data-ansi="qwerty3"] .merged-bottom[data-keycode="RTRN"]::after {
+    top: -55px;
+    left: 6px;
+    border-radius: 0 0 0.5em 0;
+}
+.keyboard_med div.merged-top {
+	height: 37px !important;
+	position: relative;
+	top: 1px;
+}
+
+.keyboard_med .keyboard div.merged-beneath {
+    top: 74px;
+	left: 477px;
+}
+
+.keyboard_med .keyboard[data-ansi="qwerty2"] .merged-bottom[data-keycode="RTRN"]::after {
+    width: 36px;
+    height: 7px;
+    top: -34px;
+    display: block;
+    left: 0px;
+}
+
+.keyboard_med .keyboard[data-ansi="qwerty2"] div.merged-top {
+    border-radius: 0.3em 0.3em 0 0.5em !important;
+}
+
+/*.keyboard_heatmap {
+
+    transform: translate(-50%, -50%) scale(1.00);
+
+	transform-origin: center center;
+	position: relative;
+	left: 50%;
+	top: 50%;
+}*/
+
+.no_interaction div.key{
+	cursor: default;
+}
+/**/
+.keyboard_third_heatmap .box {
+	width: 320px;
+	float: right;
+}
+.keyboard_third_heatmap .box > * {
+	float: left;
+}

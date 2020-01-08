@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<meta charset="UTF-8">
+	<title>Keyview</title>
+	<link href="./normalize.css" rel="stylesheet">
+	<link href="./xkb.css" rel="stylesheet">
+	<link href="./heatmap.css" rel="stylesheet">
+	<script src="./jquery.min.js">
+	</script>
+	<script src="./latinize_qzltn.js"></script>
+	<script src="./keydata.js"></script>
+	<script src="./keyview_pg.js"></script>
+	<script src="./heatmap.js"></script> 
+    <script src="./keyboard_view_app.js"></script>
+
+</head>
+<body>
+
+	<h1>Keyview Comparisson Detailed Overview Mode</h1>
+	<div class="keyboard_reg">
+		<div class="control_interface">
+			<div class="symbols-select">
+				<label>
+					<input name="symbols" type="radio" value="qazaq_basic">
+					<span>Qazaq basic</span>
+				</label>
+				<label>
+					<input name="symbols" type="radio" value="qazaq_old">
+					<span>Kazakh Old</span>
+				</label>
+			</div>
+			<div class="indicators">
+				<div class="diff-select">
+					<label>
+						<input name="diff" type="checkbox">
+						<span>mark changes</span>
+					</label>
+				</div>
+				<div class="diff-legend">
+					<div class="qazaq_basic">
+						<div>
+							<div class="new"></div>new
+						</div>
+					</div>
+					<div class="qazaq_old">
+						<div>
+							<div class="con"></div>conflict
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="geometry-select">
+				<label>
+					<input class="" name="geometry" type="radio" value="qwerty1">
+					<span>ANSI 0</span>
+				</label>
+				<label>
+					<input class="" name="geometry" type="radio" value="qwerty2">
+					<span>ANSI 1</span>
+				</label>
+				<label>
+					<input class="" name="geometry" type="radio" value="qwerty3">
+					<span>ANSI 2</span>
+				</label>
+			</div>
+		</div>
+		<div class="keys">
+			<div class="keyboard kv_keyboard">
+				
+			</div>
+			<div class="keydetails kv_keydetails">
+				
+			</div>
+		</div>
+		<template class="details_container">
+			<table class="key-table">
+				<tbody>
+					<tr class="level2">
+						<td class="group1">
+							<div class="char"></div>
+							<div class="code"></div>
+							<p class="name"></p>
+							<p class="symbolname"></p>
+						</td>
+						<td class="group2">
+							<div class="char"></div>
+							<div class="code"></div>
+							<p class="name"></p>
+							<p class="symbolname"></p>
+						</td>
+					</tr>
+					<tr class="level1">
+						<td class="group1">
+							<div class="char"></div>
+							<div class="code"></div>
+							<p class="name"></p>
+							<p class="symbolname"></p>
+						</td>
+						<td class="group2">
+							<div class="char"></div>
+							<div class="code"></div>
+							<p class="name"></p>
+							<p class="symbolname"></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</template>
+	</div>
+	<hr>
+	<h1>Keyview Replacements View</h1>
+
+	<div class="keyboard_second_diff">
+		
+		<div class="keyboard_diff">
+			
+			<div class="control_interface">
+				<div class="geometry-select">
+					<label>
+						<input class="" name="geometry" type="radio" value="qwerty1">
+						<span>ANSI 0</span>
+					</label>
+					<label>
+						<input class="" name="geometry" type="radio" value="qwerty2">
+						<span>ANSI 1</span>
+					</label>
+					<label>
+						<input class="" name="geometry" type="radio" value="qwerty3">
+						<span>ANSI 2</span>
+					</label>
+				</div>
+			</div>
+			<div class="keys">
+
+				<div class="keyview_keyboard">
+					<div class="keyboard kv_keyboard">
+		
+					</div>
+					
+				</div>
+			</div>
+
+			
+		</div>
+	</div>
+	<hr>
+	<h1>Keyview Typing Heatmap Comparisson View</h1>
+	<div class="keyboard_third_heatmap">
+		<div class="keyboard_heatmap keyboard_med">
+
+			<div class="keys">
+				<div class="keyview_keyboard">
+					<div class="keyboard kv_keyboard">
+		
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<textarea id="typefield" rows="10"> БІРІНШІ СӨЗ
+		Бұл жасқа келгенше жақсы өткіздік пе, жаман өткіздік пе, әйтеуір бірталай өмірімізді өткіздік: алыстық, жұлыстық, айтыстық, тартыстық - әурешілікті көре-көре келдік. Енді жер ортасы жасқа келдік: қажыдық, жалықтық; қылып жүрген ісіміздің баянсызын, байлаусызын көрдік, бәрі қоршылық екенін білдік. Ал, енді қалған өмірімізді қайтіп, не қылып өткіземіз? Соны таба алмай өзім де қайранмын.</textarea>
+			<button id="convert"> Cyrl >> Latyn </button>
+			<textarea id="dest" rows="10"></textarea>
+		</div>
+	</div>
+
+	
+
+
+
+
+
+</body>
+</html>
