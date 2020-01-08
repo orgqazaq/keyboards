@@ -132,7 +132,7 @@ There is a need for integration of the Qazaq alphabet to fonts.
 
 ### **Introduction / Project Overview / Scope**
 
-Given the efforts of the Kazakh government in terms of latinisation, a need arises for the creation of fonts that integrate the new alphabet so it can be used easier, leveraging easier integration. VivaRado was recently contracted to update Advent font, an endeavour resulting in the creation of VRD Tpography Library, a set of tools for dealing with fonts. This allong with existing technology gave rise to the idea of Qazaq.org, a portal that will initially provide access to typographic elements, and later expand to more sectors to be identifieed in the future.
+Given the efforts of the Kazakh government in terms of latinisation, a need arises for the creation of fonts that integrate the new alphabet so it can be used easier, leveraging easier integration. This allong with existing technology gave rise to the idea of Qazaq.org, a portal that will initially provide access to typographic elements, and later expand to more sectors to be identified in the future.
 
 ---
 
@@ -614,15 +614,6 @@ Ansi 0
 ```
 Please view local HTML for accuracy.
 
-* **Available Installers:**
-
-	* **Linux**
-		* [deb](https://github.com/VivaRado/qazaq.org/lib/installers/lnx/Qazaq-Basic-Linux.deb)
-	* **MacOS**
-		* [dmg](https://github.com/VivaRado/qazaq.org/lib/installers/mac/Qazaq-Basic-MacOS.dmg)
-	* **Windows**
-		* [exe](https://github.com/VivaRado/qazaq.org/lib/installers/win/Qazaq-Basic-Windows.exe)
-
 ---
 
 ### **Introduction / Phase Introduction / Planning Phase / Safe Planning / Project Plan / Keyboards / Qazaq International**
@@ -674,11 +665,20 @@ Please view local HTML for accuracy.
 
 We provide keyboards in their native to each operating system packages.
 
+* **Available Installers Qazaq Basic:**
+
+	* **Linux**
+		* [deb](https://github.com/VivaRado/qazaq.org/lib/installers/lnx/Qazaq-Basic-Linux.deb)
+	* **MacOS**
+		* [dmg](https://github.com/VivaRado/qazaq.org/lib/installers/mac/Qazaq-Basic-MacOS.dmg)
+	* **Windows**
+		* [exe](https://github.com/VivaRado/qazaq.org/lib/installers/win/Qazaq-Basic-Windows.exe)
+
 ---
 
 ### **Introduction / Phase Introduction / Planning Phase / Safe Planning / Project Plan / Keyboards / Install / Linux**
 
-Installation instructions for Linux:
+Installation instructions for Linux and Qazaq Basic:
 
 * To install: ```sudo dpkg -i Qazaq-Basic-Linux.deb```.
 * To uninstall: ```dpkg --remove org.qazaq```.
@@ -688,7 +688,7 @@ Installation instructions for Linux:
 
 ### **Introduction / Phase Introduction / Planning Phase / Safe Planning / Project Plan / Keyboards / Install / Windows**
 
-Installation instructions for Windows:
+Installation instructions for Windows and Qazaq Basic:
 
 * To install double click the .exe file ```Qazaq-Basic-Windows.exe```.
 * To uninstall double click the .exe file ```Qazaq-Basic-Windows.exe```.
@@ -698,7 +698,7 @@ Installation instructions for Windows:
 
 ### **Introduction / Phase Introduction / Planning Phase / Safe Planning / Project Plan / Keyboards / Install / MacOS**
 
-Installation instructions for MacOS:
+Installation instructions for MacOS and Qazaq Basic:
 
 * To install double click the ```.dmg``` file ```Qazaq-Basic-MacOS.dmg```.
 * Drag and drop the files to the ```Keyboard Layouts Folder``` as shown in the installer.
